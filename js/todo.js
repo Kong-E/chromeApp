@@ -1,11 +1,35 @@
 const toDoForm = document.getElementById("todo-form");
 const toDoInput = document.querySelector("#todo-form input");
 const toDoList = document.getElementById("todo-list");
+// const toDoRemove = document.getElementById("all-remove");
 
 const TODOS_KEY = "todos";
 const LINE_THROUGH = "line-through";
 
 let toDos = [];
+
+// toDoRemove.addEventListener("click",deleteAllToDo);
+
+function changeOrder(e) {
+    const li = e.target.parentElement;
+    let idx;
+    // 바꿀요소의 인덱스 추출
+    for (var i=0; i<toDos.length; i++) {
+        if (toDos[i].ID === parseInt(li.id)) {
+            idx = i;
+            console.log(idx);
+            break;
+        }
+    }
+    if (idx === 0) return; 
+    const target = toDos.splice(idx, 1)[0];
+    console.log(target);
+    toDos.splice(idx-1, 0, target);
+    console.log(toDos);
+    deleteAllToDo();
+    toDos.forEach(paintToDo);
+    saveToDos();
+}
 
 function saveToDos() {
     localStorage.setItem(TODOS_KEY, JSON.stringify(toDos));
@@ -16,6 +40,11 @@ function deleteToDo(e) {
     li.remove();
     toDos = toDos.filter(item => item.ID !== parseInt(li.id));
     saveToDos();
+}
+
+function deleteAllToDo() {
+    //임시
+    toDoList.innerHTML = ``;
 }
 
 function addLineThrough(e) {
@@ -37,11 +66,16 @@ function paintToDo(newTodo) {
     const span = document.createElement("span");
     span.innerText = newTodo.text;
     span.addEventListener("click", addLineThrough);
-    const button = document.createElement("button");
-    button.innerText = "X"
-    button.addEventListener("click", deleteToDo)
+    const button1 = document.createElement("button");
+    button1.innerText = "X";
+    button1.addEventListener("click", deleteToDo);
+    const button2 = document.createElement("button");
+    button2.innerText = "▲";
+    button2.title = "위로 올려";
+    button2.addEventListener("click",changeOrder);
     li.appendChild(span);
-    li.appendChild(button);
+    li.appendChild(button1);
+    li.appendChild(button2);
     toDoList.appendChild(li);
 }
 

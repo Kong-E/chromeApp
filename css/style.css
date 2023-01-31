@@ -115,17 +115,23 @@ ul li {
     cursor: pointer;
 }
 
-ul button {
+button {
+    border: 0px;
+    background: none;
+    cursor: pointer;
+}
+
+ul button:first-of-type {
     color: rgb(235, 58, 105);
     font-size: 1.5rem;
     font-family: 'Jua', sans-serif;
     margin-left: 10px;
 }
-
-button {
-    border: 0px;
-    background: none;
-    cursor: pointer;
+ 
+ul button:last-child {
+    color: rgb(255, 130, 163);
+    font-size: 1.5rem;
+    margin-left: -5px;
 }
 
 #quote {
