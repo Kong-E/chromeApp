@@ -23,6 +23,12 @@ body::-webkit-scrollbar-track {
     display: none;
 }
 
+.line-through {
+    text-decoration: line-through;
+    text-decoration-color: rgb(235, 58, 105);
+    text-decoration-thickness: 3px;
+}
+
 img {
     position:absolute;
     width: 100%;
@@ -105,6 +111,9 @@ ul {
     overflow: auto;
     margin-bottom: 5%;
 }
+ul li {
+    cursor: pointer;
+}
 
 ul button {
     color: rgb(235, 58, 105);
@@ -128,9 +137,9 @@ button {
     top: 3%;
     font-size: 1.1rem;
     text-align: left;
-    font-style: italic;
+    /* font-style: italic; */
     /* font-weight: bold; */
-    color: rgb(88, 115, 167);
+    color: gray;
 }
 
 #quote span:last-child {
