@@ -188,7 +188,7 @@ main {
 }
 
 #todo-list-box::-webkit-scrollbar {
-  width: 8px; /* 스크롤바의 너비 */
+  width: 9px; /* 스크롤바의 너비 */
 }
 
 #todo-list-box::-webkit-scrollbar-thumb {
