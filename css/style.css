@@ -19,7 +19,7 @@ body {
 }
 
 .hidden {
-  display: none;
+  display: none !important;
 }
 .style {
   background-color: #11111123;
@@ -27,7 +27,7 @@ body {
 }
 .line-through {
   text-decoration: line-through;
-  text-decoration-color: #8c5c4a;
+  text-decoration-color: #bf7160;
   text-decoration-thickness: 2px;
 }
 /*
@@ -44,7 +44,7 @@ img {
 } */
 
 header {
-  background-color: #8c5c4a;
+  background-color: #bf7160;
   color: #f2c1ae;
   position: fixed;
   width: 40%;
@@ -117,22 +117,30 @@ header {
 main {
   background-color: #f2c1ae;
   height: 100vh;
-  color: #8c5c4a;
+  color: #bf7160;
   margin-left: 40%;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 30% 1fr 1fr 1fr 3fr;
 }
 
+#login-form {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  font-size: 5rem;
+}
+
 #login-form input:first-child {
   background: none;
-  width: 100px;
+  width: 25%;
   height: 25px;
-  margin-bottom: 10px;
-  padding: 5px;
   border: 0px;
   border-radius: 5px;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
+  color: #bf7160;
+  font-weight: bold;
+  text-align: center;
 }
 
 #login-form input:first-child:focus {
@@ -140,10 +148,11 @@ main {
 }
 
 #login-form input:last-child {
-  background: none;
+  background-color: #bf7160;
   border: 0px;
-  font-size: 1.5rem;
-  color: #8c5c4a;
+  margin-left: 5px;
+  font-size: 1.3rem;
+  color: #f2c1ae;
 }
 
 #greeting {
@@ -166,7 +175,7 @@ main {
   border: 0px;
   font-size: 1rem;
   text-align: center;
-  color: #8c5c4a;
+  color: #bf7160;
 }
 
 #todo-form input:focus {
@@ -193,7 +202,7 @@ main {
 
 #todo-list-box::-webkit-scrollbar-thumb {
   height: 30%; /* 스크롤바의 길이 */
-  background: #8c5c4a; /* 스크롤바의 색상 */
+  background: #bf7160; /* 스크롤바의 색상 */
 }
 
 #todo-list-box::-webkit-scrollbar-track {
@@ -220,7 +229,7 @@ button {
   border: 0px;
   background: none;
   cursor: pointer;
-  color: #8c5c4a;
+  color: #bf7160;
 }
 
 ul button:first-of-type {
