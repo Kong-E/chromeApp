@@ -124,9 +124,6 @@ main {
   grid-template-rows: 30% 1fr 1fr 1fr 3fr;
 }
 
-#login-form {
-}
-
 #login-form input:first-child {
   background: none;
   width: 100px;
