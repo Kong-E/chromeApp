@@ -4,37 +4,59 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/style.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">    
+    <!--   <link
+      href="https://fonts.googleapis.com/css2?family=Jua&display=swap"
+      rel="stylesheet"
+    /> -->
     <title>Momentum</title>
   </head>
   <body>
-    <div id="box">    
-        <h2 id="clock">00:00:00</h2>
-        <form id="login-form" class="hidden">
-            <input required maxlength="15" type="text" placeholder="별명 입력!" />
-            <input type="submit" value="로그인" />   
-        </form>
-        <h1 id="greeting" class="hidden"></h1>
-        <form id="todo-form">
-            <input type="text" placeholder="할일을 입력하시오." required>
-            <!-- <div id="all-remove">모두 지우기</div> -->
-        </form>
+    <header>
+      <div id="clock">00:00:00</div>
+      <div id="weather">
+        <span></span>
+        <span></span>
+      </div>
+      <div id="quote">
+        <span></span>
+        <span></span>
+      </div>
+      <div id="address">
+        <div id="bm-text">Bookmark</div>
+        <div id="bookmark" class="hidden">
+          <a href="https://mail.google.com/">지메일</a>
+          <a href="https://nomadcoders.co/">노마드코더</a>
+          <a href="https://codingapple.com/">코딩애플</a>
+          <a href="https://www.inflearn.com/">인프런</a>
+        </div>
+      </div>
+    </header>
+    <main>
+      <form id="login-form" class="hidden">
+        <input
+          required
+          maxlength="15"
+          type="text"
+          placeholder="Write your name"
+        />
+        <input type="submit" value="Login" />
+      </form>
+      <div id="greeting" class="hidden"></div>
+      <form id="todo-form">
+        <input type="text" placeholder="Write a todo" required />
+      </form>
+      <div id="todo-list-box">
         <ul id="todo-list"></ul>
-    </div>
-    <div id="quote">
-        <span></span>
-        <span></span>
-    </div>
-    <div id="weather">
-        <span></span>
-        <span></span>
-    </div>
+      </div>
+    </main>
     <script src="js/greetings.js"></script>
     <script src="js/clock.js"></script>
     <script src="js/quotes.js"></script>
-    <script src="js/background.js"></script>
+    <!-- <script src="js/background.js"></script> -->
     <script src="js/todo.js"></script>
     <script src="js/weather.js"></script>
+    <script src="js/bookmark.js"></script>
   </body>
 </html>

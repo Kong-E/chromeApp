@@ -6,24 +6,23 @@ const HIDDEN_CLASSNAME = "hidden";
 const USERNAME_KEY = "username";
 
 function onLoginSubmit(event) {
-    event.preventDefault();
-    loginForm.classList.add("hidden");
-    const username = loginInput.value;
-    localStorage.setItem(USERNAME_KEY, username);
-    paintGreetings(username);
+  event.preventDefault();
+  loginForm.classList.add("hidden");
+  const username = loginInput.value;
+  localStorage.setItem(USERNAME_KEY, username);
+  paintGreetings(username);
 }
 
 function paintGreetings(username) {
-    greeting.innerText = `${username}, 안녕!`;
-    greeting.classList.remove(HIDDEN_CLASSNAME);
+  greeting.innerText = `Hello ${username}`;
+  greeting.classList.remove(HIDDEN_CLASSNAME);
 }
 
 const savedValue = localStorage.getItem(USERNAME_KEY);
 
 if (savedValue === null) {
-    loginForm.classList.remove(HIDDEN_CLASSNAME);
-    loginForm.addEventListener("submit", onLoginSubmit);
+  loginForm.classList.remove(HIDDEN_CLASSNAME);
+  loginForm.addEventListener("submit", onLoginSubmit);
 } else {
-    paintGreetings(savedValue);
+  paintGreetings(savedValue);
 }
-

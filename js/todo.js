@@ -17,17 +17,20 @@ function changeOrder(e) {
     for (var i=0; i<toDos.length; i++) {
         if (toDos[i].ID === parseInt(li.id)) {
             idx = i;
-            console.log(idx);
             break;
         }
     }
     if (idx === 0) return; 
     const target = toDos.splice(idx, 1)[0];
-    console.log(target);
     toDos.splice(idx-1, 0, target);
-    console.log(toDos);
     deleteAllToDo();
     toDos.forEach(paintToDo);
+    const lis = document.querySelectorAll("ul li");
+    for (var i=0; i<toDos.length; i++) {
+        if (toDos[i].done === true) {
+            lis[i].childNodes[0].classList.add(LINE_THROUGH);
+        }
+    }
     saveToDos();
 }
 
@@ -101,7 +104,6 @@ if (savedToDos !== null) {
     const parsedToDos = JSON.parse(savedToDos);
     toDos = parsedToDos;
     toDos.forEach(paintToDo);
-
     const lis = document.querySelectorAll("ul li");
     for (var i=0; i<toDos.length; i++) {
         if (toDos[i].done === true) {
