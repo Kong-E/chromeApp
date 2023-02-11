@@ -75,11 +75,11 @@ function paintToDo(newTodo) {
   span.addEventListener("click", addLineThrough);
   const button1 = document.createElement("button");
   button1.innerHTML = '<span class="fa-solid fa-x"></span>';
-  button1.addEventListener("click", deleteToDo);
+  button1.children[0].addEventListener("click", deleteToDo);
   const button2 = document.createElement("button");
   button2.innerHTML = '<span class="fa-solid fa-caret-up"></span>';
   button2.title = "위로 올리기";
-  button2.addEventListener("click", changeOrder);
+  button2.children[0].addEventListener("click", changeOrder);
   li.appendChild(span);
   li.appendChild(button1);
   li.appendChild(button2);
