@@ -1,33 +1,34 @@
 @font-face {
-  font-family: "NanumSquareNeo";
-  src: url(font/NanumSquareNeo-cBd.woff);
+  font-family: "Humanbumsuk";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2210-2@1.0/Humanbumsuk.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
 }
 
 body {
   position: relative;
+  font-family: Humanbumsuk;
   top: 0px;
   left: 0px;
   font-size: 10px;
-  font-weight: 600;
+  font-weight: 400;
   text-align: center;
   color: rgb(30, 35, 43);
 }
 
 ::placeholder {
   text-align: center;
-  color: #d9a78b;
+  color: #fff;
 }
 
 .hidden {
   display: none !important;
 }
-.style {
-  background-color: #11111123;
-  color: #f2c1ae;
-}
+
 .line-through {
   text-decoration: line-through;
-  text-decoration-color: #bf7160;
+  text-decoration-color: #65768c;
   text-decoration-thickness: 2px;
 }
 /*
@@ -44,8 +45,8 @@ img {
 } */
 
 header {
-  background-color: #bf7160;
-  color: #f2c1ae;
+  background-color: #65768c;
+  color: #fff;
   position: fixed;
   width: 40%;
   height: 100%;
@@ -55,13 +56,12 @@ header {
 }
 
 #clock {
-  font-size: 6rem;
+  font-size: 5.5rem;
   display: flex;
   height: 30%;
   justify-content: center;
   align-items: flex-end;
   font-weight: bold;
-  /* font-style: italic; */
   letter-spacing: -5px;
 }
 
@@ -98,26 +98,103 @@ header {
   justify-content: center;
   align-items: center;
   font-size: medium;
-  flex-grow: 1;
-}
-
-#address:hover {
-  transition: all 0.3s;
+  font-weight: 400;
+  height: 35%;
 }
 
 #address a {
   display: inline-block;
+  font-size: 1.1rem;
   font-weight: 400;
-  font-size: 1rem;
-  margin-right: 7px;
+  margin-right: 13px;
+  margin-bottom: 10px;
   text-decoration: none;
-  color: #f2c1ae;
+  color: #fff;
+}
+
+#bm-text {
+  font-size: 1.3rem;
+}
+#add-btn {
+  cursor: pointer;
+}
+
+#bookmark {
+  width: 50%;
+}
+
+#modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bg {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modalBox {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  border-radius: 10px;
+  background-color: #fff;
+  color: #65768c;
+  width: 350px;
+  height: 200px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+label {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+#modal-name,
+#modal-link {
+  width: 180px;
+  height: 15px;
+  padding: 5px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-bottom: 2px solid #65768c;
+  font-family: Humanbumsuk;
+  font-size: 1.1rem;
+  color: #65768c;
+}
+
+#modal-name:focus,
+#modal-link:focus {
+  outline: none;
+}
+
+#save-btn,
+#close-btn {
+  cursor: pointer;
+  font-family: Humanbumsuk;
+  font-size: 1.2rem;
+  margin-top: 10px;
+  color: #fff;
+  background: #65768c;
+  border: none;
+  padding: 5px 13px;
 }
 
 main {
-  background-color: #f2c1ae;
+  background-color: #fff;
   height: 100vh;
-  color: #bf7160;
+  color: #65768c;
   margin-left: 40%;
   display: grid;
   grid-template-columns: 1fr;
@@ -133,12 +210,13 @@ main {
 
 #login-form input:first-child {
   background: none;
+  font-family: Humanbumsuk;
   width: 25%;
   height: 25px;
   border: 0px;
   border-radius: 5px;
   font-size: 1.3rem;
-  color: #bf7160;
+  color: #65768c;
   font-weight: bold;
   text-align: center;
 }
@@ -148,11 +226,12 @@ main {
 }
 
 #login-form input:last-child {
-  background-color: #bf7160;
+  background-color: #65768c;
+  font-family: Humanbumsuk;
   border: 0px;
   margin-left: 5px;
   font-size: 1.3rem;
-  color: #f2c1ae;
+  color: #fff;
 }
 
 #greeting {
@@ -160,6 +239,7 @@ main {
   justify-content: center;
   align-items: flex-end;
   font-size: 5rem;
+  font-weight: bold;
 }
 
 #todo-form {
@@ -169,13 +249,16 @@ main {
 }
 
 #todo-form input {
+  font-family: Humanbumsuk;
   background: none;
-  width: 80%;
-  padding: 5px;
+  width: 50%;
+  height: 20px;
+  padding-bottom: 10px;
   border: 0px;
-  font-size: 1rem;
+  border-bottom: 3px solid #65768c;
+  font-size: 1.2rem;
   text-align: center;
-  color: #bf7160;
+  color: #65768c;
 }
 
 #todo-form input:focus {
@@ -193,7 +276,7 @@ main {
   font-weight: 400;
   grid-row: 3 / 6;
   overflow-y: scroll;
-  height: 78%;
+  height: 77%;
 }
 
 #todo-list-box::-webkit-scrollbar {
@@ -202,16 +285,16 @@ main {
 
 #todo-list-box::-webkit-scrollbar-thumb {
   height: 30%; /* 스크롤바의 길이 */
-  background: #bf7160; /* 스크롤바의 색상 */
+  background: #65768c; /* 스크롤바의 색상 */
 }
 
 #todo-list-box::-webkit-scrollbar-track {
-  background: #f2c1ae; /*스크롤바 뒷 배경 색상*/
+  background: #fff; /*스크롤바 뒷 배경 색상*/
 }
 
 ul {
   list-style: none;
-  font-size: 1rem;
+  font-size: 1.1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -229,7 +312,7 @@ button {
   border: 0px;
   background: none;
   cursor: pointer;
-  color: #bf7160;
+  color: #65768c;
 }
 
 ul button:first-of-type {

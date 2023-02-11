@@ -6,11 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/style.css" />
-    <!--   <link
-      href="https://fonts.googleapis.com/css2?family=Jua&display=swap"
-      rel="stylesheet"
-    /> -->
-    <title>Momentum</title>
+    <title>홈</title>
   </head>
   <body>
     <header>
@@ -26,10 +22,22 @@
       <div id="address">
         <div id="bm-text">Bookmark</div>
         <div id="bookmark" class="hidden">
-          <a href="https://mail.google.com/">지메일</a>
-          <a href="https://nomadcoders.co/">노마드코더</a>
-          <a href="https://codingapple.com/">코딩애플</a>
-          <a href="https://www.inflearn.com/">인프런</a>
+          <span id="add-btn">+</span>
+        </div>
+        <div id="modal" class="hidden">
+          <div class="bg"></div>
+          <div class="modalBox">
+            <form id="modal-form">
+              <label for="name">이름</label>
+              <input name="name" id="modal-name" type="text" required />
+              <div></div>
+              <label for="link">주소</label
+              ><input name="link" id="modal-link" type="text" required />
+              <div></div>
+              <input id="save-btn" type="submit" value="save" />
+              <input id="close-btn" type="button" value="close" />
+            </form>
+          </div>
         </div>
       </div>
     </header>
@@ -45,7 +53,7 @@
       </form>
       <div id="greeting" class="hidden"></div>
       <form id="todo-form">
-        <input type="text" placeholder="Write a todo" required />
+        <input type="text" required />
       </form>
       <div id="todo-list-box">
         <ul id="todo-list"></ul>
