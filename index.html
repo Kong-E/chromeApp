@@ -7,36 +7,45 @@
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/style.css" />
     <title>홈</title>
+    <script
+      src="https://kit.fontawesome.com/acfdc7a5f5.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <header>
-      <div id="clock">00:00:00</div>
-      <div id="weather">
-        <span></span>
-        <span></span>
-      </div>
-      <div id="quote">
-        <span></span>
-        <span></span>
-      </div>
-      <div id="address">
-        <div id="bm-text">Bookmark</div>
-        <div id="bookmark" class="hidden">
-          <span id="add-btn">+</span>
+      <div class="wrap">
+        <div id="clock">00:00:00</div>
+        <div id="weather">
+          <span></span>
+          <span></span>
         </div>
-        <div id="modal" class="hidden">
-          <div class="bg"></div>
-          <div class="modalBox">
-            <form id="modal-form">
-              <label for="name">이름</label>
-              <input name="name" id="modal-name" type="text" required />
-              <div></div>
-              <label for="link">주소</label
-              ><input name="link" id="modal-link" type="text" required />
-              <div></div>
-              <input id="save-btn" type="submit" value="save" />
-              <input id="close-btn" type="button" value="close" />
-            </form>
+        <div id="quote">
+          <span></span>
+          <span></span>
+        </div>
+        <div id="address">
+          <div id="bm-text">
+            <span class="fa-solid fa-bookmark"></span>
+            Bookmark
+          </div>
+          <div id="bookmark" class="hidden">
+            <span id="add-btn">+</span>
+          </div>
+          <div id="modal" class="hidden">
+            <div class="bg"></div>
+            <div class="modalBox">
+              <form id="modal-form">
+                <label for="name">이름</label>
+                <input name="name" id="modal-name" type="text" required />
+                <div></div>
+                <label for="link">주소</label
+                ><input name="link" id="modal-link" type="text" required />
+                <div></div>
+                <input id="save-btn" type="submit" value="save" />
+                <input id="close-btn" type="button" value="close" />
+              </form>
+            </div>
           </div>
         </div>
       </div>
@@ -52,6 +61,9 @@
         <input type="submit" value="Login" />
       </form>
       <div id="greeting" class="hidden"></div>
+      <div id="search">
+        <form id="search-form"><input type="text" class="query" /></form>
+      </div>
       <form id="todo-form">
         <input type="text" required />
       </form>
@@ -66,5 +78,6 @@
     <script src="js/todo.js"></script>
     <script src="js/weather.js"></script>
     <script src="js/bookmark.js"></script>
+    <script src="js/search.js"></script>
   </body>
 </html>

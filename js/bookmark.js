@@ -32,6 +32,7 @@ function paintBookmark(bmObj) {
 
 function submitBookmark(e) {
   e.preventDefault();
+  if (modalName.value === "" || modalLink.value === "") return;
   const bmName = modalName.value;
   const bmLink = modalLink.value;
   modalName.value = "";

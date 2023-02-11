@@ -11,7 +11,7 @@ let toDos = [];
 // toDoRemove.addEventListener("click",deleteAllToDo);
 
 function changeOrder(e) {
-  const li = e.target.parentElement;
+  const li = e.target.parentElement.parentElement;
   let idx;
   // 바꿀요소의 인덱스 추출
   for (var i = 0; i < toDos.length; i++) {
@@ -39,7 +39,7 @@ function saveToDos() {
 }
 
 function deleteToDo(e) {
-  const li = e.target.parentElement;
+  const li = e.target.parentElement.parentElement;
   li.remove();
   toDos = toDos.filter((item) => item.ID !== parseInt(li.id));
   saveToDos();
@@ -74,11 +74,11 @@ function paintToDo(newTodo) {
   span.innerText = newTodo.text;
   span.addEventListener("click", addLineThrough);
   const button1 = document.createElement("button");
-  button1.innerText = "X";
+  button1.innerHTML = '<span class="fa-solid fa-x"></span>';
   button1.addEventListener("click", deleteToDo);
   const button2 = document.createElement("button");
-  button2.innerText = "▲";
-  button2.title = "위로 올려";
+  button2.innerHTML = '<span class="fa-solid fa-caret-up"></span>';
+  button2.title = "위로 올리기";
   button2.addEventListener("click", changeOrder);
   li.appendChild(span);
   li.appendChild(button1);
