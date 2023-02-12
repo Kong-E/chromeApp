@@ -259,7 +259,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  font-size: 4.5rem;
+  font-size: 4rem;
   font-weight: bold;
   color: #fff;
 }
@@ -288,11 +288,12 @@ main {
   width: 45%;
   outline: none;
   border: none;
-  border-radius: 20px;
-  padding: 8px;
+  border-radius: 30px;
+  padding-bottom: 8px;
+  padding-top: 13px;
   padding-left: 40px;
   padding-right: 40px;
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   font-weight: bold;
   text-align: center;
   color: #1c1c1c;
@@ -315,7 +316,8 @@ main {
   background-color: #fff;
   width: 30%;
   height: 20px;
-  padding: 10px;
+  padding-bottom: 8px;
+  padding-top: 13px;
   padding-left: 30px;
   padding-right: 30px;
   border: 0px;

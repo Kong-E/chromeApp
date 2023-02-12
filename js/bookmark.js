@@ -13,9 +13,14 @@ const BOOKMARK_KEY = "bookmark";
 
 let bookmarks = [];
 
-function togg() {
-  text.classList.toggle(HIDDEN);
-  bookmark.classList.toggle(HIDDEN);
+function enterToggle() {
+  text.classList.add(HIDDEN);
+  bookmark.classList.remove(HIDDEN);
+}
+
+function leaveToggle() {
+  text.classList.remove(HIDDEN);
+  bookmark.classList.add(HIDDEN);
 }
 
 function modalToggle() {
@@ -47,8 +52,8 @@ function submitBookmark(e) {
   localStorage.setItem(BOOKMARK_KEY, JSON.stringify(bookmarks));
 }
 
-address.addEventListener("mouseenter", togg);
-address.addEventListener("mouseleave", togg);
+address.addEventListener("mouseenter", enterToggle);
+address.addEventListener("mouseleave", leaveToggle);
 addBtn.addEventListener("click", modalToggle);
 saveBtn.addEventListener("click", submitBookmark);
 closeBtn.addEventListener("click", modalToggle);
