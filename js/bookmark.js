@@ -27,7 +27,7 @@ function leaveToggle() {
 function modalToggle() {
   modal.classList.toggle(HIDDEN);
   modalName.value = "";
-  modalLink.value = "";
+  modalLink.value = "https://";
 }
 
 function paintBookmark(bmObj) {
@@ -44,7 +44,7 @@ function submitBookmark(e) {
   const bmName = modalName.value;
   const bmLink = modalLink.value;
   modalName.value = "";
-  modalLink.value = "";
+  modalLink.value = "https://";
   const bmObj = {
     id: Date.now(),
     name: bmName,
