@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
     <title>홈</title>
     <script
       src="https://kit.fontawesome.com/acfdc7a5f5.js"
@@ -13,44 +19,8 @@
     ></script>
   </head>
   <body>
-    <header>
-      <div class="wrap">
-        <div id="clock">00:00:00</div>
-        <div id="weather">
-          <span></span>
-          <span></span>
-        </div>
-        <div id="quote">
-          <span></span>
-          <span></span>
-        </div>
-        <div id="address">
-          <div id="bm-text">
-            <span class="fa-solid fa-bookmark"></span>
-            Bookmark
-          </div>
-          <div id="bookmark" class="hidden">
-            <span id="add-btn"><i class="fa-solid fa-plus"></i></span>
-          </div>
-          <div id="modal" class="hidden">
-            <div class="bg"></div>
-            <div class="modalBox">
-              <form id="modal-form">
-                <label for="name">이름</label>
-                <input name="name" id="modal-name" type="text" required />
-                <div></div>
-                <label for="link">주소 </label
-                ><input name="link" id="modal-link" type="text" required />
-                <div></div>
-                <input id="save-btn" type="submit" value="save" />
-                <input id="close-btn" type="button" value="close" />
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
-    <main>
+    <div class="main">
+      <div id="clock">00:00:00</div>
       <form id="login-form" class="hidden">
         <input
           required
@@ -61,20 +31,73 @@
         <input type="submit" value="Login" />
       </form>
       <div id="greeting" class="hidden"></div>
-      <div id="search">
-        <form id="search-form"><input type="text" class="query" /></form>
-      </div>
+      <form id="search-form">
+        <input type="text" id="query" placeholder="Search" autocomplete="off" />
+      </form>
       <form id="todo-form">
-        <input type="text" required />
+        <input
+          type="text"
+          id="input"
+          placeholder="Write your TODO"
+          autocomplete="off"
+          required
+        />
       </form>
       <div id="todo-list-box">
         <ul id="todo-list"></ul>
       </div>
-    </main>
+    </div>
+    <footer>
+      <div id="weather">
+        <span></span>
+        <span></span>
+      </div>
+      <div id="quote">
+        <span></span>
+        <span></span>
+      </div>
+    </footer>
+    <div id="address">
+      <div id="bm-text">
+        <span class="fa-solid fa-bookmark"></span>
+        Bookmark
+      </div>
+      <div id="bookmark" class="hidden">
+        <span id="add-btn"><i class="fa-solid fa-plus"></i></span>
+      </div>
+      <div id="modal" class="hidden">
+        <div class="modalBox">
+          <form id="modal-form">
+            <input
+              id="modal-name"
+              type="text"
+              title="name"
+              placeholder="name"
+              autocomplete="off"
+              required
+            />
+            <div></div>
+            <input
+              id="modal-link"
+              type="text"
+              title="link"
+              placeholder="link"
+              autocomplete="off"
+              required
+            />
+            <div class="btn-box">
+              <input id="save-btn" type="submit" value="save" />
+              <input id="close-btn" type="button" value="close" />
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
     <script src="js/greetings.js"></script>
     <script src="js/clock.js"></script>
     <script src="js/quotes.js"></script>
-    <!-- <script src="js/background.js"></script> -->
+    <script src="js/background.js"></script>
     <script src="js/todo.js"></script>
     <script src="js/weather.js"></script>
     <script src="js/bookmark.js"></script>

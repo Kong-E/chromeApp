@@ -1,12 +1,12 @@
 const address = document.querySelector("#address");
 const text = document.querySelector("#bm-text");
 const addBtn = document.querySelector("#add-btn");
+const modal = document.querySelector("#modal");
 const modalName = document.querySelector("#modal-name");
 const modalLink = document.querySelector("#modal-link");
 const saveBtn = document.querySelector("#save-btn");
 const closeBtn = document.querySelector("#close-btn");
 const bookmark = document.querySelector("#bookmark");
-const modal = document.querySelector("#modal");
 
 const HIDDEN = "hidden";
 const BOOKMARK_KEY = "bookmark";
@@ -21,10 +21,13 @@ function enterToggle() {
 function leaveToggle() {
   text.classList.remove(HIDDEN);
   bookmark.classList.add(HIDDEN);
+  modal.classList.add(HIDDEN);
 }
 
 function modalToggle() {
   modal.classList.toggle(HIDDEN);
+  modalName.value = "";
+  modalLink.value = "";
 }
 
 function paintBookmark(bmObj) {
@@ -54,6 +57,7 @@ function submitBookmark(e) {
 
 address.addEventListener("mouseenter", enterToggle);
 address.addEventListener("mouseleave", leaveToggle);
+modal.addEventListener("mouseleave", leaveToggle);
 addBtn.addEventListener("click", modalToggle);
 saveBtn.addEventListener("click", submitBookmark);
 closeBtn.addEventListener("click", modalToggle);
