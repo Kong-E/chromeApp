@@ -178,41 +178,43 @@ footer {
 }
 #modal-name,
 #modal-link {
-  width: 50%;
+  width: 60%;
   box-sizing: border-box;
   background-color: #f6f9fc;
   color: rgb(99, 99, 99);
   font-weight: bold;
-  padding: 3px;
-  text-align: center;
+  padding: 8px 10px;
   text-shadow: none;
   font-size: 0.8rem;
   margin-bottom: 10px;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.61);
-  border-radius: 5px;
+  border-radius: 10px;
 }
 #modal-name:focus::placeholder,
 #modal-link:focus::placeholder {
   color: transparent;
 }
 .btn-box {
-  width: 50%;
+  width: 60%;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   flex-wrap: wrap;
 }
 #save-btn,
 #close-btn {
-  width: 45%;
-  height: 25px;
+  width: 35%;
   box-sizing: border-box;
   text-shadow: none;
   font-weight: bold;
   text-align: center;
   font-size: 1rem;
   cursor: pointer;
+  padding: 8px 0;
   background-color: #f6f9fc;
   color: rgb(99, 99, 99);
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.61);
-  border-radius: 5px;
+  border-radius: 10px;
+}
+#close-btn {
+  margin-left: 10px;
 }
