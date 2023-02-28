@@ -166,9 +166,15 @@ footer {
   font-weight: bold;
 }
 #address a {
+  display: inline-block;
   margin-bottom: 10px;
   margin-right: 10px;
   font-weight: bold;
+  transition: all 200ms;
+  animation: slide 0.5s forwards;
+}
+#address a:hover {
+  transform: scale(1.1, 1.1);
 }
 #modal {
   margin-top: 10px;
