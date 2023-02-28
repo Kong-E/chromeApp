@@ -1,6 +1,7 @@
 const toDoForm = document.getElementById("todo-form");
 const toDoInput = document.querySelector("#todo-form input");
 const toDoList = document.getElementById("todo-list");
+
 // const toDoRemove = document.getElementById("all-remove");
 
 const TODOS_KEY = "todos";
@@ -70,6 +71,7 @@ function addLineThrough(e) {
 function paintToDo(newTodo) {
   const li = document.createElement("li");
   li.id = newTodo.ID;
+  li.draggable = true;
   const span = document.createElement("span");
   span.innerText = newTodo.text;
   span.addEventListener("click", addLineThrough);
@@ -117,3 +119,56 @@ if (savedToDos !== null) {
     }
   }
 }
+
+function dragStart(e) {
+  console.log("drag start");
+  this.style.opacity = "0.4";
+  dragSrcEl = this;
+  e.dataTransfer.effectAllowed = "move";
+  e.dataTransfer.setData("text/html", this.innerHTML);
+}
+
+function dragEnter(e) {
+  this.classList.add("over");
+}
+
+function dragLeave(e) {
+  e.stopPropagation();
+  this.classList.remove("over");
+}
+
+function dragOver(e) {
+  e.preventDefault();
+  e.dataTransfer.dropEffect = "move";
+  return false;
+}
+
+function dragDrop(e) {
+  if (dragSrcEl != this) {
+    dragSrcEl.innerHTML = this.innerHTML;
+    this.innerHTML = e.dataTransfer.getData("text/html");
+  }
+  return false;
+}
+
+function dragEnd(e) {
+  let lis = document.querySelectorAll("ul li");
+  [].forEach.call(lis, function (item) {
+    item.classList.remove("over");
+  });
+  this.style.opacity = "1";
+}
+
+function addEventsDragAndDrop(el) {
+  el.addEventListener("dragstart", dragStart, false);
+  el.addEventListener("dragenter", dragEnter, false);
+  el.addEventListener("dragover", dragOver, false);
+  el.addEventListener("dragleave", dragLeave, false);
+  el.addEventListener("drop", dragDrop, false);
+  el.addEventListener("dragend", dragEnd, false);
+}
+
+let lis = document.querySelectorAll("ul li");
+[].forEach.call(lis, function (item) {
+  addEventsDragAndDrop(item);
+});

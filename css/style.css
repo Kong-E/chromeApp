@@ -6,8 +6,9 @@ body {
   font-size: 10px;
   font-weight: 400;
   text-align: center;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.61);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
   color: #f6f9fc;
+  user-select: none;
 }
 
 ::placeholder {
@@ -44,7 +45,9 @@ img {
   right: 0px;
   bottom: 0px;
   z-index: -1;
-  opacity: 87%;
+  opacity: 90%;
+  filter: blur(0.3);
+  background-size: cover;
 }
 
 .main {
@@ -76,11 +79,11 @@ img {
 #login-form input[type="submit"] {
   padding: 5px 10px;
   border: 4px solid #f6f9fc;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.61);
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
   cursor: pointer;
 }
 #greeting {
-  font-size: 5.8rem;
+  font-size: 6rem;
   font-weight: bold;
 }
 
@@ -110,6 +113,7 @@ img {
   min-height: 15%;
   max-height: 19%;
   overflow: auto;
+  overflow-x: hidden;
 }
 
 #todo-list-box::-webkit-scrollbar {
@@ -142,8 +146,8 @@ li {
   display: grid;
   grid-template-columns: auto 30px 30px;
   margin-top: 5px;
+  cursor: pointer;
 }
-
 footer {
   position: absolute;
   width: 100%;
@@ -170,7 +174,7 @@ footer {
   margin-top: 10px;
   width: 300px;
   height: 300px;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.61);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
 }
 #modal-form {
   font-size: 1rem;
@@ -187,7 +191,7 @@ footer {
   text-shadow: none;
   font-size: 0.8rem;
   margin-bottom: 10px;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.61);
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
   border-radius: 10px;
 }
 #modal-name:focus::placeholder,
@@ -212,9 +216,13 @@ footer {
   padding: 8px 0;
   background-color: #f6f9fc;
   color: rgb(99, 99, 99);
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.61);
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
   border-radius: 10px;
 }
 #close-btn {
   margin-left: 10px;
+}
+
+.over {
+  transform: scale(1.1, 1.1);
 }
