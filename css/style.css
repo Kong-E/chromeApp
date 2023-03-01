@@ -86,7 +86,6 @@ img {
   font-size: 6rem;
   font-weight: bold;
 }
-
 #search-form,
 #todo-form {
   width: 100%;
@@ -148,8 +147,11 @@ li {
   grid-template-columns: auto 30px 30px;
   margin-top: 5px;
   cursor: pointer;
+  transition: all 200ms;
 }
-
+li button:hover {
+  color: rgb(193, 193, 193);
+}
 footer {
   position: absolute;
   width: 100%;
