@@ -31,7 +31,6 @@ function leaveToggle() {
 
 function modalToggle() {
   modal.classList.toggle(HIDDEN);
-  modalName.value = "";
   modalLink.value = "https://";
 }
 
@@ -80,6 +79,7 @@ editBtn.addEventListener("click", () => {
     btn.addEventListener("click", (e) => {
       const div = e.target.parentElement.parentElement;
       div.remove();
+      console.log(e.target);
       bookmarks = bookmarks.filter((item) => item.ID !== parseInt(div.id));
       saveBookmarks();
     });
