@@ -89,7 +89,7 @@ function paintToDo(newTodo) {
   li.appendChild(div);
   li.appendChild(button1);
   li.appendChild(button2);
-  toDoList.appendChild(li);
+  toDoList.prepend(li);
   addEventsDragAndDrop(li);
 }
 
