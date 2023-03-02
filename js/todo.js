@@ -49,7 +49,7 @@ function changeOrder(e) {
   }
   if (idx === 0) return;
   const target = toDos.splice(idx, 1)[0];
-  toDos.splice(idx - 1, 0, target);
+  toDos.splice(idx + 1, 0, target);
   deleteAllToDo();
   toDos.forEach(paintToDo);
   paintLineThrough();
@@ -84,7 +84,6 @@ function paintToDo(newTodo) {
   button1.children[0].addEventListener("click", deleteToDo);
   const button2 = document.createElement("button");
   button2.innerHTML = '<span class="fa-solid fa-caret-up"></span>';
-  button2.title = "위로 올리기";
   button2.children[0].addEventListener("click", changeOrder);
   li.appendChild(div);
   li.appendChild(button1);
