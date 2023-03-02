@@ -32,7 +32,7 @@ function paintLineThrough() {
   const lis = document.querySelectorAll("ul li");
   for (var i = 0; i < toDos.length; i++) {
     if (toDos[i].done === true) {
-      lis[i].childNodes[0].classList.add(LINE_THROUGH);
+      lis[toDos.length - 1 - i].childNodes[0].classList.add(LINE_THROUGH);
     }
   }
 }
