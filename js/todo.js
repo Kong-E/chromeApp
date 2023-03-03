@@ -47,7 +47,7 @@ function changeOrder(e) {
       break;
     }
   }
-  if (idx === 0) return;
+  if (idx === toDos.length - 1) return;
   const target = toDos.splice(idx, 1)[0];
   toDos.splice(idx + 1, 0, target);
   deleteAllToDo();
@@ -76,6 +76,7 @@ function paintToDo(newTodo) {
   const li = document.createElement("li");
   li.id = newTodo.ID;
   li.draggable = true;
+  li.title = "Drag and Drop!";
   const div = document.createElement("div");
   div.innerText = newTodo.text;
   div.addEventListener("click", addLineThrough);
