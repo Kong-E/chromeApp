@@ -147,7 +147,9 @@ li {
   grid-template-columns: auto 30px 30px;
   margin-top: 5px;
   cursor: pointer;
-  transition: all 200ms;
+}
+li button {
+  transition: all 0.5s ease;
 }
 li button:hover {
   color: rgb(193, 193, 193);
@@ -174,11 +176,14 @@ footer {
   display: inline-block;
   margin-bottom: 10px;
   margin-right: 10px;
-  transition: all 200ms;
 }
 #bookmark div button {
   margin-left: 1px;
   font-size: 0.7rem;
+}
+#bookmark a,
+#bookmark button {
+  transition: all 500ms ease;
 }
 #bookmark a:hover,
 #bookmark button:hover {
@@ -233,7 +238,7 @@ footer {
   color: rgb(0, 0, 0);
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
   border-radius: 10px;
-  transition: all 200ms;
+  transition: all 500ms ease;
 }
 .btn-box > *:hover {
   background-color: rgb(193, 193, 193);

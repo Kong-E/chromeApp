@@ -76,9 +76,9 @@ function paintToDo(newTodo) {
   const li = document.createElement("li");
   li.id = newTodo.ID;
   li.draggable = true;
-  li.title = "Drag and Drop!";
   const div = document.createElement("div");
   div.innerText = newTodo.text;
+  div.title = "Drag and Drop!";
   div.addEventListener("click", addLineThrough);
   const button1 = document.createElement("button");
   button1.innerHTML = '<span class="fa-solid fa-x"></span>';
